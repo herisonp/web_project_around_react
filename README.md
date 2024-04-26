@@ -1,70 +1,55 @@
-# Getting Started with Create React App
+# Tripleten web_project_around
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Bootcamp Desenvolvimento Web - TripleTen
 
-## Available Scripts
+- <a href="https://herisonp.github.io/web_project_around/" target="_blank">Veja o deploy</a>
 
-In the project directory, you can run:
+## 👁 Preview
 
-### `npm start`
+<p align="center">
+  <img alt="Projeto Homeland - TripleTen" src=".github/thumbnail.jpg" width="100%">
+</p>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 🚀 Tecnologias
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Esse projeto foi desenvolvido com as seguintes tecnologias:
 
-### `npm test`
+- HTML
+- CSS
+- Responsividade
+- JavaScript
+- React
+- POO (Programação orientada a Objeto)
+- Webpack, Babel e PostCSS
+- Consumo de API
+- Git e GitHub
+- Metodoliga BEM
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 💻 Projeto
 
-### `npm run build`
+Projeto criado durante o bootcamp de desenvolvimento web da TripleTen.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 🧪 Melhorias
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Algumas melhorias que podem ser aplicadas:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Animação em alguns elementos da página para deixar mais dinâmico e interativo
+- Salvar alterações do usuário no browser
 
-### `npm run eject`
+## ⚙ Instruções para rodar local
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Primeiro faça o clone do repositório em seu computador.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Certifique-se de ter o Node em seu computador, na sua versão mais recente. Abra o terminal no diretório do repositório clonado e execute o comando para instalar todas as dependências:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```bash
+npm install
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Após todas dependências instaladas, execute o comando para iniciar o servidor de desenvolvimento:
 
-## Learn More
+```bash
+npm start
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Se tudo deu certo, o servidor está pronto para uso. Caso o navegador não abra automaticamente, acesse em seu navegador o endereço local na porta 3000. [http://localhost:3000](http://localhost:3000)
