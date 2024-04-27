@@ -12,13 +12,13 @@ export default function Main({
   onEditAvatarClick,
   onCardClick,
 }) {
-  const [userName, setUserName] = useState();
-  const [userDescription, setUserDescription] = useState();
-  const [userAvatar, setUserAvatar] = useState();
+  const [userName, setUserName] = useState("");
+  const [userDescription, setUserDescription] = useState("");
+  const [userAvatar, setUserAvatar] = useState("");
 
   const [cards, setCards] = useState([]);
 
-  useEffect(() => {
+  function getUserData() {
     api
       .getLoggedUser()
       .then((data) => {
@@ -27,15 +27,20 @@ export default function Main({
         setUserAvatar(data.avatar);
       })
       .catch(console.log);
-  }, []);
+  }
 
-  useEffect(() => {
+  function getInitialCardsData() {
     api
       .getInitialCards()
       .then((data) => {
         setCards(data);
       })
       .catch(console.log);
+  }
+
+  useEffect(() => {
+    getUserData();
+    getInitialCardsData();
   }, []);
 
   return (
