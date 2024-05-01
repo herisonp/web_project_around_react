@@ -26,22 +26,18 @@ class Api {
   }
 
   postCard(card) {
-    return this._makeRequest("cards", "POST", card);
+    return this._makeRequest("/cards", "POST", card);
   }
 
   deleteCardById(id) {
     return this._makeRequest(`/cards/${id}`, "DELETE");
   }
 
-  likeCardById(id) {
-    return this._makeRequest(`/cards/likes/${id}`, "PUT");
+  changeLikeCardStatus(id, isLiked) {
+    return this._makeRequest(`/cards/likes/${id}`, isLiked ? "PUT" : "DELETE");
   }
 
-  deleteLikeCardById(id) {
-    return this._makeRequest(`/cards/likes/${id}`, "DELETE");
-  }
-
-  getLoggedUser() {
+  getUserInfo() {
     return this._makeRequest("/users/me");
   }
 
@@ -54,9 +50,11 @@ class Api {
   }
 }
 
-export const api = new Api("https://around.nomoreparties.co/v1/web_ptbr_09", {
+const api = new Api("https://around.nomoreparties.co/v1/web_ptbr_09", {
   headers: {
     authorization: "1146a04f-7181-45eb-9b96-3a5b76f79b15",
     "Content-Type": "application/json",
   },
 });
+
+export default api;

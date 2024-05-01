@@ -1,47 +1,21 @@
-import { useEffect, useState } from "react";
+import { useContext } from "react";
 import imageFallback from "../images/avatar-fallback.png";
 
 import iconEdit from "../images/edit-icon.svg";
 import iconPlus from "../images/plus-icon.svg";
-import { api } from "../utils/api";
 import Card from "./Card";
+import { CurrentUserContext } from "../contexts/CurrentUserContext";
 
 export default function Main({
   onEditProfileClick,
   onAddPlaceClick,
   onEditAvatarClick,
   onCardClick,
+  cards,
+  onCardLike,
+  onCardDelete,
 }) {
-  const [userName, setUserName] = useState("");
-  const [userDescription, setUserDescription] = useState("");
-  const [userAvatar, setUserAvatar] = useState("");
-
-  const [cards, setCards] = useState([]);
-
-  function getUserData() {
-    api
-      .getLoggedUser()
-      .then((data) => {
-        setUserName(data.name);
-        setUserDescription(data.about);
-        setUserAvatar(data.avatar);
-      })
-      .catch(console.log);
-  }
-
-  function getInitialCardsData() {
-    api
-      .getInitialCards()
-      .then((data) => {
-        setCards(data);
-      })
-      .catch(console.log);
-  }
-
-  useEffect(() => {
-    getUserData();
-    getInitialCardsData();
-  }, []);
+  const currentUser = useContext(CurrentUserContext);
 
   return (
     <main className="main container">
@@ -57,14 +31,14 @@ export default function Main({
             />
           </button>
           <img
-            src={userAvatar ? userAvatar : imageFallback}
+            src={currentUser.avatar ? currentUser.avatar : imageFallback}
             className="profile__avatar"
             alt="Imagem de avatar do usuário"
           />
         </div>
         <div className="profile__info">
           <div className="profile__name-wrapper">
-            <h1 className="profile__name">{userName}</h1>
+            <h1 className="profile__name">{currentUser.name}</h1>
             <button
               id="edit-profile"
               className="button profile__btn-edit popup-trigger"
@@ -73,7 +47,7 @@ export default function Main({
               <img src={iconEdit} alt="Ícone do botão de editar perfil" />
             </button>
           </div>
-          <p className="profile__about">{userDescription}</p>
+          <p className="profile__about">{currentUser.about}</p>
         </div>
         <button
           id="add-place"
@@ -87,7 +61,13 @@ export default function Main({
       <section className="posts">
         <ul className="posts__list">
           {cards.map((card) => (
-            <Card key={card._id} card={card} onCardClick={onCardClick} />
+            <Card
+              key={card._id}
+              card={card}
+              onCardClick={onCardClick}
+              onCardLike={onCardLike}
+              onCardDelete={onCardDelete}
+            />
           ))}
         </ul>
         {cards.length <= 0 && (

@@ -1,16 +1,27 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import iconClose from "../images/close-icon.svg";
 
 export default function ImagePopup({ card, onClose }) {
   const [selectedCard, setSelectedCard] = useState(card);
+  const overlay = useRef();
 
   useEffect(() => {
     setSelectedCard(card);
   }, [card]);
 
-  function handleCloseClick() {
+  function close() {
     setSelectedCard({});
     onClose();
+  }
+
+  function handleCloseClick() {
+    close();
+  }
+
+  function handleCloseClickOverlay(e) {
+    if (e.target === overlay.current) {
+      close();
+    }
   }
 
   return (
@@ -18,6 +29,8 @@ export default function ImagePopup({ card, onClose }) {
       className={`popup ${
         selectedCard.name ? "popup_opened" : "popup_closed"
       } popup_image`}
+      ref={overlay}
+      onClick={handleCloseClickOverlay}
     >
       <div className="popup__container popup__container_image">
         <button className="button popup__btn-close" onClick={handleCloseClick}>
