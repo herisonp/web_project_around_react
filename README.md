@@ -1,8 +1,8 @@
-# Tripleten web_project_around
+# Tripleten web_project_around_react
 
 Bootcamp Desenvolvimento Web - TripleTen
 
-- <a href="https://herisonp.github.io/web_project_around/" target="_blank">Veja o deploy</a>
+- <a href="https://herisonp.github.io/web_project_around_react/" target="_blank">Veja o deploy</a>
 
 ## 👁 Preview
 
